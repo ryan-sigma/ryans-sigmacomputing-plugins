@@ -10,5 +10,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/simons-sigmacomputing-plugins/",
+  base: "/ryans-sigmacomputing-plugins/",
 });

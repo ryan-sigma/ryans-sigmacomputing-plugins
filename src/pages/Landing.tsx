@@ -12,20 +12,19 @@ export default function Landing() {
     }, 3000);
   };
 
-  const clockUrl = `${window.location.origin}/simons-sigmacomputing-plugins/#/clock`;
-  const onloadUrl = `${window.location.origin}/simons-sigmacomputing-plugins/#/onload`;
+  const clockUrl = `${window.location.origin}/ryans-sigmacomputing-plugins/#/foreach`;
 
   return (
     <div style={landingStyles.container}>
       <header style={landingStyles.header}>
         <h1 style={landingStyles.headerTitle}>
-          Simon's Sigma Computing Plugins
+          Ryan's Sigma Computing Plugins
         </h1>
         <p style={landingStyles.subtitle}>
-          This is a Github Pages site for Simon's utility plugins, usually
+          This is a Github Pages site for ryan's utility plugins, usually
           focused around action integrations in Sigma. The source code is
           available under an open license on{" "}
-          <a href="https://github.com/simonsigmacomputing/simons-sigmacomputing-plugins">
+          <a href="https://github.com/ryansigmacomputing/ryans-sigmacomputing-plugins">
             Github
           </a>
           .
@@ -36,7 +35,7 @@ export default function Landing() {
           <h2 style={landingStyles.pluginsSectionTitle}>Available Plugins</h2>
 
           <div style={landingStyles.pluginCard}>
-            <h3 style={landingStyles.pluginCardTitle}>Clock Plugin</h3>
+            <h3 style={landingStyles.pluginCardTitle}>ForEach Plugin</h3>
             <p style={landingStyles.pluginDescription}>
               A timer-based plugin that executes actions at regular intervals.
               Configure the tick rate in milliseconds, control the running
@@ -61,37 +60,10 @@ export default function Landing() {
               </button>
             </div>
           </div>
-
-          <div style={landingStyles.pluginCard}>
-            <h3 style={landingStyles.pluginCardTitle}>OnLoad Plugin</h3>
-            <p style={landingStyles.pluginDescription}>
-              An initialization plugin that triggers an action when loaded, with
-              optional configurable delay. Ideal for setting up workflows or
-              executing startup actions automatically.
-            </p>
-            <p style={landingStyles.pluginFeatures}>
-              <strong>Features:</strong> Automatic on-load triggering, optional
-              delay (currently broken due to Sigma-side bug), manual step
-              execution
-            </p>
-            <div style={landingStyles.urlContainer}>
-              <strong>URL:</strong>{" "}
-              <code style={landingStyles.pluginCode}>{onloadUrl}</code>
-              <button
-                style={landingStyles.copyButton}
-                onClick={() => {
-                  copyToClipboard(onloadUrl);
-                }}
-                title="Copy URL to clipboard"
-              >
-                {copiedUrl === onloadUrl ? "✓ Copied!" : "Copy"}
-              </button>
-            </div>
-          </div>
         </section>
       </main>
       <footer style={landingStyles.footer}>
-        <p>&copy; 2025 Simon's Sigma Computing Plugins</p>
+        <p>&copy; 2025 ryan's Sigma Computing Plugins</p>
       </footer>
     </div>
   );
