@@ -7,6 +7,7 @@ export const pluginContainerStyles = {
   background: colors.bgGradient,
   color: colors.textPrimary,
   fontFamily: typography.fontFamily,
+  overflow: 'auto',
 };
 
 export const pluginHeaderStyles = {

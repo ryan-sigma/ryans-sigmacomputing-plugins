@@ -1,0 +1,102 @@
+import {
+  useConfig,
+  useEditorPanelConfig,
+  useVariable,
+  useUrlParameter,
+} from "@sigmacomputing/plugin";
+
+import {
+  pluginContainerStyles,
+  pluginHeaderStyles,
+  pluginTitleStyles,
+  pluginContentStyles,
+  pluginStatusItemStyles,
+  pluginLabelStyles,
+  pluginValueStyles,
+} from "../styles/pluginStyles";
+
+interface ForEachConfig_t {
+    testVariable: string;
+    urlParamToRead: string;
+    effect1: string;
+    trigger1: string;
+}
+
+function ForEach() {
+  useEditorPanelConfig([
+    {
+      type: "variable",
+      name: "testVariable",
+      label: "Test Variable",
+      allowedTypes: ["number", "text"],
+    },
+    {
+      type: "variable",
+      name: "urlParamToRead",
+      label: "URL Param to Read",
+      allowedTypes: ["text"],
+    },
+    { type: "action-effect", name: "effect1", label: "Action Effect 1" },
+    { type: "action-trigger", name: "trigger1", label: "Action Trigger 1" },
+  ]);
+
+  const config: ForEachConfig_t = useConfig() as ForEachConfig_t;
+
+  // Extract the variables from config panel
+  const [testVariableValue] = useVariable(config.testVariable);
+  const [urlParamToReadValue] = useVariable(config.urlParamToRead);
+  const [urlParameter, setUrlParameter] = useUrlParameter(urlParamToReadValue?.defaultValue?.value ?? '');
+
+  return (
+    <div style={pluginContainerStyles}>
+      <div style={pluginHeaderStyles}>
+        <h2 style={pluginTitleStyles}>Debug Plugin</h2>
+      </div>
+      <div style={pluginContentStyles}>
+        <div style={pluginStatusItemStyles}>
+          <span style={pluginLabelStyles}>Config:</span>
+          <pre
+            style={{
+              ...pluginValueStyles,
+            }}
+          >
+            {JSON.stringify(config, undefined, 2)}
+          </pre>
+        </div>
+        <div style={pluginStatusItemStyles}>
+          <span style={pluginLabelStyles}>URL Param to Read:</span>
+          <pre
+            style={{
+              ...pluginValueStyles,
+            }}
+          >
+            {JSON.stringify(urlParamToReadValue, undefined, 2)}
+          </pre>
+        </div>
+        <div style={pluginStatusItemStyles}>
+          <span style={pluginLabelStyles}>URL Param Value:</span>
+          <pre
+            style={{
+              ...pluginValueStyles,
+            }}
+          >
+            {JSON.stringify(urlParameter, undefined, 2)}
+            <button onClick={() => setUrlParameter('test')}>Set URL Param to 'test'</button>
+          </pre>
+        </div>
+        <div style={pluginStatusItemStyles}>
+          <span style={pluginLabelStyles}>Test Variable:</span>
+          <pre
+            style={{
+              ...pluginValueStyles,
+            }}
+          >
+            {JSON.stringify(testVariableValue, undefined, 2)}
+          </pre>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ForEach;
