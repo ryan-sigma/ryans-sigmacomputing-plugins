@@ -14,6 +14,7 @@ import {
   pluginLabelStyles,
   pluginValueStyles,
 } from "../styles/pluginStyles";
+import { useCallback, useState } from "react";
 
 interface ForEachConfig_t {
     testVariable: string;
@@ -42,10 +43,19 @@ function ForEach() {
 
   const config: ForEachConfig_t = useConfig() as ForEachConfig_t;
 
+  const [index, setIndex] = useState(1);
+
   // Extract the variables from config panel
   const [testVariableValue] = useVariable(config.testVariable);
   const [urlParamToReadValue] = useVariable(config.urlParamToRead);
-  const [urlParameter, setUrlParameter] = useUrlParameter(urlParamToReadValue?.defaultValue?.value ?? '');
+
+  const urlParamToRead = urlParamToReadValue?.defaultValue?.value ?? '';
+  const [urlParameter, setUrlParameter] = useUrlParameter(urlParamToRead);
+
+  const updateUrlParameter = useCallback(() => {
+    setUrlParameter(`test-${urlParamToRead}-${index}`);
+    setIndex(index + 1);
+  }, [index, urlParamToRead]);
 
   return (
     <div style={pluginContainerStyles}>
@@ -81,7 +91,7 @@ function ForEach() {
             }}
           >
             {JSON.stringify(urlParameter, undefined, 2)}
-            <button onClick={() => setUrlParameter('test')}>Set URL Param to 'test'</button>
+            <button onClick={updateUrlParameter}>Set URL Param to 'test-{urlParamToRead}-{index}'</button>
           </pre>
         </div>
         <div style={pluginStatusItemStyles}>
