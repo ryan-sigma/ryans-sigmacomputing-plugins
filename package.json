@@ -38,8 +38,5 @@
   "overrides": {
     "vite": "npm:rolldown-vite@7.1.14"
   },
-  "packageManager": "yarn@4.10.3",
-  "resolutions": {
-    "@sigmacomputing/plugin": "portal:/Users/ryan.kahn/sigma/plugin"
-  }
+  "packageManager": "yarn@4.10.3"
 }
