@@ -12,43 +12,51 @@ import {
 
 
 function DropdownParameterTest() {
-  useEditorPanelConfig([
-      {
-        type: "dropdown",
-        name: "dropdownParameter1",
-        label: "This is the first dropdown parameter",
-        values: ["value1", "value2", "value3"],
-        defaultValue: "value1",
-      },
-      {
-        type: "dropdown",
-        name: "dropdownParameter2",
-        label: "This is the second dropdown parameter",
-        values: ["value1", "value2", "value3"],
-        defaultValue: "value2",
-      },
-      {
-        type: "dropdown",
-        name: "dropdownParameter3",
-        label: "This is the third dropdown parameter. Only one option!",
-        values: ["value1"],
-        defaultValue: "value1",
-      },
-      {
-        type: "dropdown",
-        name: "dropdownParameter4",
-        label: "This is the fourth dropdown parameter. Only one option!",
-        values: ["value1"],
-        defaultValue: "value1",
-      },
-  ]);
-
   const config = useConfig() as {
     dropdownParameter1?: string;
     dropdownParameter2?: string;
     dropdownParameter3?: string;
     dropdownParameter4?: string;
   };
+
+  const pluginConfig: CustomPluginConfigOptions[] = [
+    {
+      type: "dropdown",
+      name: "dropdownParameter1",
+      label: "This is the first dropdown parameter, pick value1 to enable dropdownParameter2",
+      values: ["value1", "value2", "value3"],
+      defaultValue: "value1",
+    },
+  ];
+
+  if (config.dropdownParameter1 === 'value1') {
+    pluginConfig.push({
+      type: "dropdown",
+      name: "dropdownParameter2",
+      label: "This is the second dropdown parameter, pick value2 to enable dropdownParameter3",
+      values: ["value1", "value2", "value3"],
+      defaultValue: "value2",
+    })
+  }
+
+  if (config.dropdownParameter2 === 'value1') {
+    pluginConfig.push({
+      type: "dropdown",
+      name: "dropdownParameter3",
+      label: "This is the third dropdown parameter. Only one option!",
+      values: ["value1"],
+      defaultValue: "value1",
+    })
+    pluginConfig.push({
+      type: "dropdown",
+      name: "dropdownParameter4",
+      label: "This is the fourth dropdown parameter. Only one option!",
+      values: ["value1"],
+      defaultValue: "value1",
+    })
+  }
+
+  useEditorPanelConfig(pluginConfig);
 
   const parameters = [
     { key: "dropdownParameter1", label: "parameter1" },
