@@ -1,4 +1,4 @@
-import { useConfig, useEditorPanelConfig } from "@sigmacomputing/plugin";
+import { useConfig, useEditorPanelConfig, type CustomPluginConfigOptions } from "@sigmacomputing/plugin";
 
 import {
   pluginContainerStyles,
