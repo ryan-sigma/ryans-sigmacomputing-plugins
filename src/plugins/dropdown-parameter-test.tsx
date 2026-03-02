@@ -43,18 +43,30 @@ function DropdownParameterTest() {
     pluginConfig.push({
       type: "dropdown",
       name: "dropdownParameter3",
-      label: "This is the third dropdown parameter. Only one option!",
-      values: ["value1"],
-      defaultValue: "value1",
-    })
-    pluginConfig.push({
-      type: "dropdown",
-      name: "dropdownParameter4",
-      label: "This is the fourth dropdown parameter. Only one option!",
+      label: "This is the third dropdown parameter. Pick Option 2 to enable more options for the 4th dropdown",
       values: ["value1"],
       defaultValue: "value1",
     })
   }
+  if (config.dropdownParameter3 === 'value2') {
+    
+    pluginConfig.push({
+      type: "dropdown",
+      name: "dropdownParameter4",
+      label: "This is the fourth dropdown parameter.",
+      values: ["value2", "value3", "value4"],
+      defaultValue: "value2",
+    })
+  } else {
+    pluginConfig.push({
+      type: "dropdown",
+      name: "dropdownParameter4",
+      label: "This is the fourth dropdown parameter.",
+      values: ["value1"],
+      defaultValue: "value1",
+    })
+  }
+
 
   useEditorPanelConfig(pluginConfig);
 
