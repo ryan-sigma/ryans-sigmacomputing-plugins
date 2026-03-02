@@ -41,13 +41,6 @@ function DropdownParameterTest() {
         values: ["value1"],
         defaultValue: "value1",
       },
-      {
-        type: "dropdown",
-        name: "dropdownParameter5",
-        label: "This is the fifth dropdown parameter. No options!",
-        values: [],
-        defaultValue: "",
-      }
   ]);
 
   const config = useConfig() as {
@@ -55,7 +48,6 @@ function DropdownParameterTest() {
     dropdownParameter2?: string;
     dropdownParameter3?: string;
     dropdownParameter4?: string;
-    dropdownParameter5?: string;
   };
 
   const parameters = [
@@ -63,7 +55,6 @@ function DropdownParameterTest() {
     { key: "dropdownParameter2", label: "parameter2" },
     { key: "dropdownParameter3", label: "parameter3" },
     { key: "dropdownParameter4", label: "parameter4" },
-    { key: "dropdownParameter5", label: "parameter5" },
   ] as const;
 
   return (
