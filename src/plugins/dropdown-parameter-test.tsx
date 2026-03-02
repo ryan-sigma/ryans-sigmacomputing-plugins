@@ -2,6 +2,8 @@ import { useConfig, useEditorPanelConfig } from "@sigmacomputing/plugin";
 
 import {
   pluginContainerStyles,
+  pluginHeaderStyles,
+  pluginTitleStyles,
   pluginLabelStyles,
   pluginValueStyles,
   pluginStatusItemStyles,
@@ -34,6 +36,9 @@ function DropdownParameterTest() {
 
   return (
     <div style={pluginContainerStyles}>
+      <div style={pluginHeaderStyles}>
+        <h2 style={pluginTitleStyles}>Dropdown Parameter Tester</h2>
+      </div>
       <div style={pluginContentStyles}>
         <div style={pluginStatusItemStyles}>
           <span style={pluginLabelStyles}>parameter1 selected:</span>
