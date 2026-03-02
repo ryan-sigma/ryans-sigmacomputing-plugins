@@ -5,6 +5,7 @@ import {
   useUrlParameter,
 } from "@sigmacomputing/plugin";
 
+import type { ActualVariable } from "../types";
 import {
   pluginContainerStyles,
   pluginHeaderStyles,
@@ -49,7 +50,9 @@ function ForEach() {
   const [testVariableValue] = useVariable(config.testVariable);
   const [urlParamToReadValue] = useVariable(config.urlParamToRead);
 
-  const urlParamToRead = urlParamToReadValue?.defaultValue?.value ?? '';
+  const value = urlParamToReadValue?.defaultValue as ActualVariable | undefined;
+  const urlParamToRead =
+    value?.type === "text" && value.value != null ? value.value : "";
   const [urlParameter, setUrlParameter] = useUrlParameter(urlParamToRead);
 
   const updateUrlParameter = useCallback(() => {

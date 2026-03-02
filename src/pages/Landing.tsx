@@ -12,7 +12,9 @@ export default function Landing() {
     }, 3000);
   };
 
-  const clockUrl = `${window.location.origin}/ryans-sigmacomputing-plugins/#/foreach`;
+  const baseUrl = `${window.location.origin}/ryans-sigmacomputing-plugins/#`;
+  const foreachUrl = `${baseUrl}/foreach`;
+  const dropdownParameterTestUrl = `${baseUrl}/dropdown-parameter-test`;
 
   return (
     <div style={landingStyles.container}>
@@ -24,7 +26,10 @@ export default function Landing() {
           This is a Github Pages site for ryan's utility plugins, usually
           focused around action integrations in Sigma. The source code is
           available under an open license on{" "}
-          <a href="https://github.com/ryansigmacomputing/ryans-sigmacomputing-plugins">
+          <a
+            href="https://github.com/ryansigmacomputing/ryans-sigmacomputing-plugins"
+            style={landingStyles.link}
+          >
             Github
           </a>
           .
@@ -48,15 +53,44 @@ export default function Landing() {
             </p>
             <div style={landingStyles.urlContainer}>
               <strong>URL:</strong>{" "}
-              <code style={landingStyles.pluginCode}>{clockUrl}</code>
+              <code style={landingStyles.pluginCode}>{foreachUrl}</code>
               <button
                 style={landingStyles.copyButton}
                 onClick={() => {
-                  copyToClipboard(clockUrl);
+                  copyToClipboard(foreachUrl);
                 }}
                 title="Copy URL to clipboard"
               >
-                {copiedUrl === clockUrl ? "✓ Copied!" : "Copy"}
+                {copiedUrl === foreachUrl ? "✓ Copied!" : "Copy"}
+              </button>
+            </div>
+          </div>
+
+          <div style={landingStyles.pluginCard}>
+            <h3 style={landingStyles.pluginCardTitle}>Dropdown Parameter Test</h3>
+            <p style={landingStyles.pluginDescription}>
+              A test plugin for debugging dropdown parameter state. Displays the
+              selected values for two dropdown parameters in the editor panel.
+            </p>
+            <p style={landingStyles.pluginFeatures}>
+              <strong>Features:</strong> Debug display for dropdown parameter
+              selected state
+            </p>
+            <div style={landingStyles.urlContainer}>
+              <strong>URL:</strong>{" "}
+              <code style={landingStyles.pluginCode}>
+                {dropdownParameterTestUrl}
+              </code>
+              <button
+                style={landingStyles.copyButton}
+                onClick={() => {
+                  copyToClipboard(dropdownParameterTestUrl);
+                }}
+                title="Copy URL to clipboard"
+              >
+                {copiedUrl === dropdownParameterTestUrl
+                  ? "✓ Copied!"
+                  : "Copy"}
               </button>
             </div>
           </div>

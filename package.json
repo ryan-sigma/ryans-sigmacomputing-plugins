@@ -11,14 +11,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sigmacomputing/plugin": "^1.0.10",
+    "@sigmacomputing/plugin": "^1.0.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
-    "@rollup/plugin-commonjs": "^29.0.0",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
@@ -33,10 +32,7 @@
     "prettier": "^3.6.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
-    "vite": "npm:rolldown-vite@7.1.14"
-  },
-  "overrides": {
-    "vite": "npm:rolldown-vite@7.1.14"
+    "vite": "v8.0.0-beta.16"
   },
   "packageManager": "yarn@4.10.3"
 }
