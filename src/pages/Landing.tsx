@@ -12,7 +12,7 @@ export default function Landing() {
     }, 3000);
   };
 
-  const baseUrl = `${window.location.origin}/ryans-sigmacomputing-plugins`;
+  const baseUrl = `${window.location.origin}/ryans-sigmacomputing-plugins/#`;
   const foreachUrl = `${baseUrl}/foreach`;
   const dropdownParameterTestUrl = `${baseUrl}/dropdown-parameter-test`;
 

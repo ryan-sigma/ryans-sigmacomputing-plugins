@@ -1,6 +1,8 @@
 # Simon's Sigma Computing Plugins
 
-A collection of custom plugins for Sigma Computing, deployed at [simons-sigmacomputing-plugins.github.io](https://slequar.github.io/simons-sigmacomputing-plugins/).
+A collection of custom plugins for Sigma Computing, deployed at [ryan-sigma.github.io/ryans-sigmacomputing-plugins](https://ryan-sigma.github.io/ryans-sigmacomputing-plugins/).
+
+> **Note:** This project is deployed to GitHub Pages. The app uses HashRouter for client-side routing, since GitHub Pages serves static files and cannot handle path-based routing.
 
 This project showcases example plugins that integrate with the [@sigmacomputing/plugin](https://www.npmjs.com/package/@sigmacomputing/plugin) SDK to extend Sigma Computing's capabilities.
 
@@ -9,7 +11,7 @@ This project showcases example plugins that integrate with the [@sigmacomputing/
 - **Clock Plugin** - A timer-based plugin that executes actions at regular intervals with configurable tick rates
 - **OnLoad Plugin** - An initialization plugin that triggers actions when loaded with optional delay
 
-Visit the [deployed site](https://slequar.github.io/simons-sigmacomputing-plugins/) to get the plugin URLs for use in Sigma Computing.
+Visit the [deployed site](https://ryan-sigma.github.io/ryans-sigmacomputing-plugins/) to get the plugin URLs for use in Sigma Computing.
 
 ## Tech Stack
 
