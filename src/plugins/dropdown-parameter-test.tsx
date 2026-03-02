@@ -82,6 +82,12 @@ function DropdownParameterTest() {
         <h2 style={pluginTitleStyles}>Dropdown Parameter Tester</h2>
       </div>
       <div style={pluginContentStyles}>
+        <div style={pluginStatusItemStyles}>
+          <span style={pluginLabelStyles}>Plugin Config:</span>
+          <pre style={pluginValueStyles}>
+            {JSON.stringify(pluginConfig, undefined, 2)}
+          </pre>
+        </div>
         {parameters.map(({ key, label }) => (
           <div key={key} style={pluginStatusItemStyles}>
             <span style={pluginLabelStyles}>{label} selected:</span>
