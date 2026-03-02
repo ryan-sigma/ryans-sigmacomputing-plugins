@@ -49,7 +49,6 @@ function DropdownParameterTest() {
     })
   }
   if (config.dropdownParameter3 === 'value2') {
-    
     pluginConfig.push({
       type: "dropdown",
       name: "dropdownParameter4",
