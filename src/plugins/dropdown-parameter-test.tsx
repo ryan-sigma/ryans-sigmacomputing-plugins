@@ -53,7 +53,18 @@ function DropdownParameterTest() {
   const config = useConfig() as {
     dropdownParameter1?: string;
     dropdownParameter2?: string;
+    dropdownParameter3?: string;
+    dropdownParameter4?: string;
+    dropdownParameter5?: string;
   };
+
+  const parameters = [
+    { key: "dropdownParameter1", label: "parameter1" },
+    { key: "dropdownParameter2", label: "parameter2" },
+    { key: "dropdownParameter3", label: "parameter3" },
+    { key: "dropdownParameter4", label: "parameter4" },
+    { key: "dropdownParameter5", label: "parameter5" },
+  ] as const;
 
   return (
     <div style={pluginContainerStyles}>
@@ -61,18 +72,14 @@ function DropdownParameterTest() {
         <h2 style={pluginTitleStyles}>Dropdown Parameter Tester</h2>
       </div>
       <div style={pluginContentStyles}>
-        <div style={pluginStatusItemStyles}>
-          <span style={pluginLabelStyles}>parameter1 selected:</span>
-          <pre style={pluginValueStyles}>
-            {JSON.stringify(config.dropdownParameter1, undefined, 2)}
-          </pre>
-        </div>
-        <div style={pluginStatusItemStyles}>
-          <span style={pluginLabelStyles}>parameter2 selected:</span>
-          <pre style={pluginValueStyles}>
-            {JSON.stringify(config.dropdownParameter2, undefined, 2)}
-          </pre>
-        </div>
+        {parameters.map(({ key, label }) => (
+          <div key={key} style={pluginStatusItemStyles}>
+            <span style={pluginLabelStyles}>{label} selected:</span>
+            <pre style={pluginValueStyles}>
+              {JSON.stringify(config[key], undefined, 2)}
+            </pre>
+          </div>
+        ))}
       </div>
     </div>
   );
