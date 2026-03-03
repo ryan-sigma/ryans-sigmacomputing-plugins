@@ -24,7 +24,9 @@ function RandomNumber() {
       <div style={pluginContentStyles}>
         <div style={pluginStatusItemStyles}>
           <span style={pluginLabelStyles}>Random Number:</span>
-          <span style={pluginValueStyles}>{randomNumber}</span>
+          <span style={pluginValueStyles} data-testid="random-number-value">
+            {randomNumber}
+          </span>
         </div>
       </div>
     </div>
