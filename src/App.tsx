@@ -4,6 +4,7 @@ import ForEach from "./plugins/foreach";
 import OnLoad from "./plugins/onLoad";
 import DebugUrlParameter from "./plugins/debug-url-parameter";
 import DropdownParameterTest from "./plugins/dropdown-parameter-test";
+import RandomNumber from "./plugins/random-number";
 import Landing from "./pages/Landing";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/onload" element={<OnLoad />} />
         <Route path="/debug-url-parameter" element={<DebugUrlParameter />} />
         <Route path="/dropdown-parameter-test" element={<DropdownParameterTest />} />
+        <Route path="/random-number" element={<RandomNumber />} />
       </Routes>
     </Router>
   );

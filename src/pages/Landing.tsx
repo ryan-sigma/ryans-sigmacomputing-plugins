@@ -15,6 +15,7 @@ export default function Landing() {
   const baseUrl = `${window.location.origin}/ryans-sigmacomputing-plugins/#`;
   const foreachUrl = `${baseUrl}/foreach`;
   const dropdownParameterTestUrl = `${baseUrl}/dropdown-parameter-test`;
+  const randomNumberUrl = `${baseUrl}/random-number`;
 
   return (
     <div style={landingStyles.container}>
@@ -62,6 +63,32 @@ export default function Landing() {
                 title="Copy URL to clipboard"
               >
                 {copiedUrl === foreachUrl ? "✓ Copied!" : "Copy"}
+              </button>
+            </div>
+          </div>
+
+          <div style={landingStyles.pluginCard}>
+            <h3 style={landingStyles.pluginCardTitle}>Random Number</h3>
+            <p style={landingStyles.pluginDescription}>
+              Displays a random number from 1 to 10,000 every time it is
+              rendered. Useful for testing dynamic content or generating random
+              values in Sigma workflows.
+            </p>
+            <p style={landingStyles.pluginFeatures}>
+              <strong>Features:</strong> Generates a new random number on each
+              render
+            </p>
+            <div style={landingStyles.urlContainer}>
+              <strong>URL:</strong>{" "}
+              <code style={landingStyles.pluginCode}>{randomNumberUrl}</code>
+              <button
+                style={landingStyles.copyButton}
+                onClick={() => {
+                  copyToClipboard(randomNumberUrl);
+                }}
+                title="Copy URL to clipboard"
+              >
+                {copiedUrl === randomNumberUrl ? "✓ Copied!" : "Copy"}
               </button>
             </div>
           </div>
